@@ -1,7 +1,10 @@
+import Category from "../Category"
 
 const MainHome = () => {
   return (
-    <div>MainHome</div>
+    <main className="pt-32 pb-52 px-40">
+      <Category/>
+    </main>
   )
 }
 

@@ -10,15 +10,13 @@ import MainHome from '../components/mains/MainHome'
 // console.log(prisma)
 const Home: NextPage = () => {
   return (
-    <div className="lg:bg-[url('/home/desktop/image-hero.jpg')] sm:bg-[url('/home/mobile/image-header.jpg')] md:bg-[url('/home/tablet/image-header.jpg')] bg-cover">
+    <div>
       <Head>
         <title>Home Page</title>
         <link rel="icon" href="/favicon-32x32.png" />
       </Head>
-      <div className="max-w-screen-lg mx-auto">
-        <HeaderHome />
-        <MainHome/>
-      </div>
+      <HeaderHome />
+      <MainHome/>
     </div>
   )
 }
