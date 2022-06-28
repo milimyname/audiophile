@@ -1,13 +1,25 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import HeaderHome from '../components/headers/HeaderHome'
+import type { NextPage } from 'next'
+import MainHome from '../components/mains/MainHome'
 
+// import { PrismaClient } from '@prisma/client'
+
+// const prisma = new PrismaClient();
+
+// console.log(prisma)
 const Home: NextPage = () => {
   return (
-    <h1 className="text-h1 font-bold underline">
-      Hello world!
-    </h1>
+    <div className="lg:bg-[url('/home/desktop/image-hero.jpg')] sm:bg-[url('/home/mobile/image-header.jpg')] md:bg-[url('/home/tablet/image-header.jpg')] bg-cover">
+      <Head>
+        <title>Home Page</title>
+        <link rel="icon" href="/favicon-32x32.png" />
+      </Head>
+      <div className="max-w-screen-lg mx-auto">
+        <HeaderHome />
+        <MainHome/>
+      </div>
+    </div>
   )
 }
 

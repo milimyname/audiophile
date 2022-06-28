@@ -6,9 +6,10 @@ module.exports = {
   ],
   theme: {
     screens: {
-      sm: "375px",
-      md: "768px",
-      lg: "1440px",
+      sm: { max: "375px" },
+      md: { max: "768px" },
+      lg: "1110px",
+      xl: "1440px",
     },
     colors: {
       primary: "#D87D4A",
@@ -18,9 +19,6 @@ module.exports = {
       lightPrimary: "#fbaf85",
       white: "#FFFFFF",
       black: "#000000",
-    },
-    fontFamily: {
-      sans: ["MANROPE", "sans-serif"],
     },
     fontSize: {
       h1: [
