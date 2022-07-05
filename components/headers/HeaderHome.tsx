@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const HeaderHome = () => {
   return (
-    <header className="h-screen grid grid-rows-[max-content] lg:bg-[url('/home/desktop/image-hero.jpg')] sm:bg-[url('/home/mobile/image-header.jpg')] md:bg-[url('/home/tablet/image-header.jpg')] bg-cover px-40">
+    <header className="h-screen grid grid-rows-[max-content] lg:bg-[url('/home/desktop/image-hero.jpg')] smMax:bg-[url('/home/mobile/image-header.jpg')] smMin:bg-[url('/home/tablet/image-header.jpg')] bg-cover px-40">
         <nav className='flex items-center justify-between py-12 border-b border-gray border-opacity-20'>
             <Image alt="Logo Icon" src="/shared/desktop/logo.svg" width={143} height={25}  />
             <ul className='flex gap-x-8 list-none uppercase text-white text-subTitle'>

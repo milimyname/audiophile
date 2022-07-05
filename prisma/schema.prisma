@@ -1,26 +1,78 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+generator client {
+  provider = "prisma-client-js"
+}
 
 datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
+type AudiophileCategoryImage {
+  desktop String
+  mobile  String
+  tablet  String
 }
 
-model Product {
-  id          String   @id @default(auto()) @map("_id") @db.ObjectId
-  slug        String
-  name        String
-  image       String[]
-  category    String
-  categoryImg String[]
-  new         Boolean
-  price       Float
-  description String
-  features    String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+type AudiophileGallery {
+  first  AudiophileGalleryFirst
+  second AudiophileGallerySecond
+  third  AudiophileGalleryThird
+}
+
+type AudiophileGalleryFirst {
+  desktop String
+  mobile  String
+  tablet  String
+}
+
+type AudiophileGallerySecond {
+  desktop String
+  mobile  String
+  tablet  String
+}
+
+type AudiophileGalleryThird {
+  desktop String
+  mobile  String
+  tablet  String
+}
+
+type AudiophileImage {
+  desktop String
+  mobile  String
+  tablet  String
+}
+
+type AudiophileIncludes {
+  item     String
+  quantity Int
+}
+
+type AudiophileOthers {
+  image AudiophileOthersImage
+  name  String
+  slug  String
+}
+
+type AudiophileOthersImage {
+  desktop String
+  mobile  String
+  tablet  String
+}
+
+model Audiophile {
+  id            String                  @id @default(auto()) @map("_id") @db.ObjectId
+  category      String
+  categoryImage AudiophileCategoryImage
+  description   String
+  features      String
+  gallery       AudiophileGallery
+  id_           Int                     @map("id")
+  image         AudiophileImage
+  includes      AudiophileIncludes[]
+  name          String
+  new           Boolean
+  others        AudiophileOthers[]
+  price         Int
+  slug          String
 }
